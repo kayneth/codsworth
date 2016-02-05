@@ -16,11 +16,30 @@
 	
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 	<script>
+		var tab;
+
+		$.get("names.txt", function(data){
+				tab = data.split('\n');
+		}, 'text');
+
+
+		//au submit on compare à chaque case du tableau
 		$('#form').submit(function(e){
 			e.preventDefault();
+			var ret = false;
 
 			var name = e.target.firstElementChild.value;
 
+			for(var i = 0; i < tab.length ;i++){
+				if(tab[i].trim() === name){
+					$('#result').text('Le pseudo '+name+' est prononçable !');
+					ret = true;
+				}
+			}
+
+			if(!ret){
+				$('#result').text('Le pseudo '+name+' n\'est pas prononçable !');
+			}
 			
 		});
 	</script>
