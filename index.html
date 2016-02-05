@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Can Codsworth say your name ?</title>
+</head>
+<body>
+	<form action="" method="" id="form">
+		<input type="text" name="name">
+		<input type="submit">
+	</form>
+
+	<p id="result"></p>
+
+	<p>Code by Dylan 'Kayneth' Temboucti </p>
+	
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+	<script>
+		$('#form').submit(function(e){
+			e.preventDefault();
+
+			var name = e.target.firstElementChild.value;
+
+			
+		});
+	</script>
+</body>
+</html>
