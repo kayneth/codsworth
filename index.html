@@ -30,6 +30,9 @@
 
 			var name = e.target.firstElementChild.value;
 
+			name = name.charAt(0).toUpperCase() + (name.slice(1)).toLowerCase();
+			console.log(name);
+
 			for(var i = 0; i < tab.length ;i++){
 				if(tab[i].trim() === name){
 					$('#result').text('Le pseudo '+name+' est prononçable !');
